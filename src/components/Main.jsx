@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Buttons from './Buttons';
+import InputFilter from './Filter';
+import MainContent from './MainContent';
+import '../styles/Main.css'
+
+
 class Main extends Component {
    
     render() {
-
-        console.log(this.props.data[0].name);
+        console.log(this.props);
         return (
-            <div>
-                <p>{this.props.data[0].name}</p>
+            <div className="container">
+                <Buttons />
+                <InputFilter/>
+                <MainContent />
             </div>
+               
         );
     };
 };
 
-const mapStateToProps = state => {
-    return {
-        data: state.data
-    };
-};
-
-export default connect(mapStateToProps)(Main);
+export default Main;

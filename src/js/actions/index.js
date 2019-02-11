@@ -8,6 +8,7 @@ import {
 
 
  export function sortAscendingAction(){
+     console.log('called');
     return function(dispatch) {
         dispatch({
             type: SORT_ASCENDING,
@@ -25,11 +26,13 @@ export function sortDescendingAction(){
     };
 };
 
-export function filterByTypeAction(){
+export function filterByTypeAction(value){
+    console.log(value);
+    console.log('filtering');
     return function(dispatch) {
         dispatch({
             type: FILTER_BY_TYPE,
-            payload: {}
+            payload: value
         });
     };
 };

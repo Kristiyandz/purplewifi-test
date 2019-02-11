@@ -5,7 +5,7 @@ import {
     DELETE,
     ADD_REPORT
  } from '../constants/action-types';
- import {utils} from '../utils/index';
+ import { utils } from '../utils/index';
 
 
 
@@ -24,27 +24,27 @@ function rootReducer(state = initialState, action) {
         case SORT_ASCENDING:
             return {
                 ...state,
-                data: [...utils.sortAsc(state, action.type)]
+                data: [...utils.sortAsc(state)]
             };
         case SORT_DESCENDING:
             return {
                 ...state,
-                data: [...utils.sortDesc(state, action.type)]
+                data: [...utils.sortDesc(state)]
             };
         case FILTER_BY_TYPE:
             return {
                 ...state,
-                data: [...utils.filterByType(state)]
+                data: [...utils.filterByType(state, action.payload)]
             };
         case DELETE:
             return {
-                ...state,
-                data: [...utils.deleteReport(state)]
+                // ...state,
+                // data: [...utils.deleteReport(state)]
             };
         case ADD_REPORT:
             return {
-                ...state,
-                data: [...utils.addReport(state)]
+                // ...state,
+                // data: [...utils.addReport(state)]
             };
         default:
             return state;

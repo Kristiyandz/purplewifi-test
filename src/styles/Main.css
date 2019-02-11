@@ -1,0 +1,24 @@
+
+.wrapper {
+   display:flex;
+   background-color: red;
+   width: 50%;
+   justify-content: space-between;
+   margin: 0 auto
+}
+.main-btns {
+    height: 100px;
+}
+.filter-input {
+    width: 50%;
+    height: 30px;
+    margin-top: 20px;
+}
+
+.content {
+    width: 50%;
+    background-color: yellow;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 20px;
+}
