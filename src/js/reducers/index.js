@@ -32,10 +32,22 @@ function rootReducer(state = initialState, action) {
                 data: [...utils.sortDesc(state)]
             };
         case FILTER_BY_TYPE:
-            return {
-                ...state,
-                data: [...utils.filterByType(state, action.payload)]
-            };
+        console.log(state);
+
+            if(action.payload.length === 0) {
+                console.log('its 0');
+                console.log(initialState);
+                return {
+                    ...initialState,
+                    data: [...initialState.data]
+                };
+            } else {
+                return {
+                    ...state,
+                    data: [...utils.filterByType(state, action.payload)]
+                };
+            }
+            
         case DELETE:
             return {
                 // ...state,
