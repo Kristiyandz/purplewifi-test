@@ -1,11 +1,7 @@
 
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import * as actions from '../../src/js/actions/index';
 import * as types from '../../src/js/constants/action-types';
 import { utils } from '../../src/js/utils/index';
 import reducer from '../../src/js/reducers/index';
-import fetchMock from 'fetch-mock';
 import expect from 'expect';
 import mockData from '../../src/js/state-data/mock-data.json';
 
