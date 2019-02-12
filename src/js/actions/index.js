@@ -37,20 +37,20 @@ export function filterByTypeAction(value){
     };
 };
 
-export function deleteReportAction(){
+export function deleteReportAction(index){
     return function(dispatch) {
         dispatch({
             type: DELETE,
-            payload: {}
+            payload: index
         });
     };
 };
 
-export function addReportAction(){
+export function addReportAction(report){
     return function(dispatch) {
         dispatch({
             type: ADD_REPORT,
-            payload: {}
+            payload: report
         });
     };
 };

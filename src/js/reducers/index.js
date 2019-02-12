@@ -11,12 +11,9 @@ import {
 
 import mockData from '../state-data/mock-data.json';
 
-console.log(mockData);
 const initialState = {
     data: mockData
 };
-
-console.log(initialState)
 
 function rootReducer(state = initialState, action) {
 
@@ -32,11 +29,7 @@ function rootReducer(state = initialState, action) {
                 data: [...utils.sortDesc(state)]
             };
         case FILTER_BY_TYPE:
-        console.log(state);
-
             if(action.payload.length === 0) {
-                console.log('its 0');
-                console.log(initialState);
                 return {
                     ...initialState,
                     data: [...initialState.data]
@@ -46,17 +39,17 @@ function rootReducer(state = initialState, action) {
                     ...state,
                     data: [...utils.filterByType(state, action.payload)]
                 };
-            }
+            };
             
         case DELETE:
             return {
-                // ...state,
-                // data: [...utils.deleteReport(state)]
+                ...state,
+                data: [...utils.deleteReport(state, action.payload)]
             };
         case ADD_REPORT:
             return {
-                // ...state,
-                // data: [...utils.addReport(state)]
+                ...state,
+                data: [...utils.addReport(state, action.payload)]
             };
         default:
             return state;
