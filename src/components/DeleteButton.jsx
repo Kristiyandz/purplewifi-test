@@ -3,12 +3,10 @@ import { deleteReportAction } from '../js/actions/index';
 import { connect } from 'react-redux';
 
 class DeleteButton extends Component {
-
     render() {
-        console.log(this.props);
         return (
             <div>
-                <button onClick={() => this.props.deleteReportAction(this.props.value)}>Delete</button>
+                <button className="delete-btn" onClick={() => this.props.deleteReportAction(this.props.value)}>Delete</button>
             </div>
         );
     };

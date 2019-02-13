@@ -2,33 +2,30 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as actions from '../../src/js/actions/index';
 import * as types from '../../src/js/constants/action-types';
-import { utils } from '../../src/js/utils/index';
-import reducer from '../../src/js/reducers/index';
 import fetchMock from 'fetch-mock';
 import expect from 'expect';
-import mockData from '../../src/js/state-data/mock-data.json';
 
-const middlewares = [thunk]
-const mockStore = configureMockStore(middlewares)
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 
 describe('Testing async action creators', () => {
   afterEach(() => {
     fetchMock.restore()
-  })
+  });
 
   it('creates a SORT_ASCENDING action and dispatches to reducer', () => {
     fetchMock.getOnce('/data', {
       body: { data: ['do something'] },
       headers: { 'content-type': 'application/json' }
-    })
+    });
 
     const expectedActions = [
       { type: types.SORT_ASCENDING, payload: {} },
     ];
     const store = mockStore({ data: [] });
 
-    store.dispatch(actions.sortAscendingAction())
-    expect(store.getActions()).toEqual(expectedActions)
+    store.dispatch(actions.sortAscendingAction());
+    expect(store.getActions()).toEqual(expectedActions);
     
   });
   it('creates a SORT_DESCENDING action and dispatches to reducer', () => {
@@ -42,8 +39,8 @@ describe('Testing async action creators', () => {
     ];
     const store = mockStore({ data: [] });
 
-    store.dispatch(actions.sortDescendingAction())
-    expect(store.getActions()).toEqual(expectedActions)
+    store.dispatch(actions.sortDescendingAction());
+    expect(store.getActions()).toEqual(expectedActions);
     
   });
   it('creates a FILTER_BY_TYPE action and dispatches to reducer', () => {
@@ -59,8 +56,8 @@ describe('Testing async action creators', () => {
     ];
     const store = mockStore({ data: [] });
 
-    store.dispatch(actions.filterByTypeAction(value))
-    expect(store.getActions()).toEqual(expectedActions)
+    store.dispatch(actions.filterByTypeAction(value));
+    expect(store.getActions()).toEqual(expectedActions);
     
   });
   it('creates a DELETE action and dispatches to reducer', () => {
@@ -76,8 +73,8 @@ describe('Testing async action creators', () => {
     ];
     const store = mockStore({ data: [] });
 
-    store.dispatch(actions.deleteReportAction(value))
-    expect(store.getActions()).toEqual(expectedActions)
+    store.dispatch(actions.deleteReportAction(value));
+    expect(store.getActions()).toEqual(expectedActions);
     
   });
   it('creates a ADD_REPORT action and dispatches to reducer', () => {

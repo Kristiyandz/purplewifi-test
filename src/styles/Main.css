@@ -7,7 +7,7 @@
    margin: 0 auto
 }
 .main-btns {
-    height: 100px;
+    height: 50px;
 }
 .filter-input {
     width: 30%;
@@ -23,12 +23,34 @@
     margin-top: 20px;
     border: 1px solid rgb(158, 140, 140)
 }
+.main-ul {
+  margin-left: -6%;
+}
 .add-report {
     width: 50%;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     border: 1px solid rgb(204, 224, 230);
+}
+.add-report-btn{
+  width: 100px;
+  height:50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.submit-report-btn {
+  height: 30px;
+}
+.delete-btn {
+  width: 100px;
+  height: 50px;
+  margin-top: 20px;
+}
+.pagination-btn {
+  width: 100px;
+  height: 30px;
+  margin-bottom: 20px;
 }
 
 html, body {

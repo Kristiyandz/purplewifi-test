@@ -2,11 +2,10 @@
 function filterByType(state, payload) {
 
     if(payload.length > 0) {
-        return state.data.filter(record => record.type.includes(payload));
+        return state.data.filter(record => record.type.toLowerCase().includes(payload));
     } else {
-        console.log(state);
         return state.data;
-    }
+    };
    
 };
 

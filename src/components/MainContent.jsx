@@ -50,7 +50,7 @@ class MainContent extends Component {
                 {this.props.data.map((element, i) => {
                     return (
                         <div>
-                            <ul key={i}>
+                            <ul className="main-ul" key={i}>
                                 <li>Name: {element.name} </li>
                                 <li>Type: {element.type} </li>
                                 <li>Char Type: {element.chartType} </li>
@@ -65,11 +65,11 @@ class MainContent extends Component {
                 }).slice(this.state.startIndx, this.state.endIndex)}
                 
                 {this.state.showComponent ? <AddReport handler={this.hideAfterAddingReport}/> : null}
-                <button onClick={() => this.showAddRecordComponent()}>Add new report</button>
+                <button className="add-report-btn" onClick={() => this.showAddRecordComponent()}>Add new report</button>
                 <div>
-                    <button onClick={() => this.handlePrevious()}>Prev</button>
-                    <button>{this.displayCurrentPage()}</button>
-                    <button onClick={() => this.handleNext()}>Nex</button>
+                    <button className="pagination-btn" onClick={() => this.handlePrevious()}>Prev</button>
+                    <button className="pagination-btn">{this.displayCurrentPage()}</button>
+                    <button className="pagination-btn" onClick={() => this.handleNext()}>Next</button>
                 </div>
             </div>
         );

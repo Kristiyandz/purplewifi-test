@@ -32,7 +32,7 @@ class AddReport extends Component {
                     <li>Frequency: <input value={this.state.frequency} onChange={(event) => this.handleInput('frequency', event.target.value)} /></li>
                     <li>Active: <input value={this.state.active} onChange={(event) => this.handleInput('active', event.target.value)} /></li>
                 </ul> 
-                <button onClick={() => this.addReportAndHideComponent()}>Submit Report</button>
+                <button className="submit-report-btn" onClick={() => this.addReportAndHideComponent()}>Submit Report</button>
             </div>
         );
     };
